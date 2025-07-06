@@ -3,12 +3,12 @@
   "folders": [],
   "items": [
     {
-      "id": "1335db75-17b7-4837-bfec-56a86293e554",
+      "id": "0bea51e2-97c5-42ab-b25c-6cff2e9c3450",
       "organizationId": null,
       "folderId": null,
       "type": 1,
       "reprompt": 0,
-      "name": "idmsa.test.com (mail@test.de)",
+      "name": "idmsa.test",
       "notes": "Notiz",
       "favorite": false,
       "login": {
@@ -30,12 +30,12 @@
       "fields": []
     },
     {
-      "id": "7e83b548-f2c0-4b68-ac21-37cfc7f926dd",
+      "id": "c485549c-2895-4706-bba6-589561d1a764",
       "organizationId": null,
       "folderId": null,
       "type": 1,
       "reprompt": 0,
-      "name": "auth0.testwebsite.com",
+      "name": "testwebsite",
       "notes": "",
       "favorite": false,
       "login": {
@@ -57,12 +57,12 @@
       "fields": []
     },
     {
-      "id": "9329a419-2bd6-4142-922e-cad001ea855a",
+      "id": "bdb51d95-872f-480d-8869-a6205fb84058",
       "organizationId": null,
       "folderId": null,
       "type": 1,
       "reprompt": 0,
-      "name": "auth0.testwebsite.com",
+      "name": "testwebsite",
       "notes": "",
       "favorite": false,
       "login": {
