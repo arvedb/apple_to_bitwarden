@@ -1,7 +1,18 @@
 [project]
 name = "apple-to-bitwarden"
 version = "0.1.0"
-description = "Add your description here"
+description = "A CLI tool to convert Apple Passwords CSV exports to Bitwarden JSON format."
+authors = [{ name = "Arved Bahde"}]
+license = { text = "MIT" }
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+apple-to-bitwarden = "main:cli"
