@@ -2,12 +2,16 @@ import csv
 import json
 import uuid
 import click
+import re
 
 @click.command()
 @click.argument("input_file", type=click.Path(exists=True, dir_okay=False, readable=True))
 @click.argument("output_file", type=click.Path(dir_okay=False, writable=True, allow_dash=True))
 @click.option("--folder", "-f", "folder_name", help="Name of the Bitwarden folder to put entries into.")
-def cli(input_file, output_file, folder_name):
+@click.option("--clean-parentheses", is_flag=True, help="Remove parentheses and their content from names, e.g. ' (user@mail.com)'.")
+@click.option("--remove-prefixes", help="Comma-separated list of prefixes to remove from names (e.g., 'www.,auth.').")
+@click.option("--remove-suffixes", help="Comma-separated list of suffixes to remove from names (e.g., '.com,.org').")
+def cli(input_file, output_file, folder_name, clean_parentheses, remove_prefixes, remove_suffixes):
     """Converts Apple password CSV exports to Bitwarden JSON format."""
     
     folder_id = None
@@ -55,14 +59,48 @@ def cli(input_file, output_file, folder_name):
         raise click.Abort()
 
     items = []
+    
+    prefixes_to_remove = []
+    if remove_prefixes:
+        prefixes_to_remove = sorted(remove_prefixes.split(','), key=len, reverse=True)
+
+    suffixes_to_remove = []
+    if remove_suffixes:
+        suffixes_to_remove = sorted(remove_suffixes.split(','), key=len, reverse=True)
+        
     for login_data in grouped_logins.values():
+        name = login_data["name"]
+
+        if clean_parentheses:
+            name = re.sub(r'\s*\([^)]*\)\s*$', '', name).strip()
+        
+        if prefixes_to_remove:
+            changed = True
+            while changed:
+                changed = False
+                for prefix in prefixes_to_remove:
+                    if name.startswith(prefix):
+                        name = name[len(prefix):]
+                        changed = True
+                        break
+        
+        if suffixes_to_remove:
+            changed = True
+            while changed:
+                changed = False
+                for suffix in suffixes_to_remove:
+                    if name.endswith(suffix):
+                        name = name[:-len(suffix)]
+                        changed = True
+                        break
+
         item = {
             "id": str(uuid.uuid4()),
             "organizationId": None,
             "folderId": folder_id,
             "type": 1,
             "reprompt": 0,
-            "name": login_data["name"],
+            "name": name,
             "notes": "\n".join(sorted(list(login_data["notes"]))),
             "favorite": False,
             "login": {

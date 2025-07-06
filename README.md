@@ -47,11 +47,24 @@ This will read `examples/apple_example.csv` and create `bitwarden_import.json` i
 -   `--folder <name>` / `-f <name>`:  
     Assigns all imported credentials to a specific folder in your Bitwarden vault.
 
-    **Example with folder:**
+-   `--clean-parentheses`:  
+    Removes parenthesized content from the end of an entry's name. For example, `my.site.com (user@email.com)` becomes `my.site.com`.
 
-    ```bash
-    uv run apple-to-bitwarden examples/apple_example.csv bitwarden_import.json --folder "Apple Imports"
-    ```
+-   `--remove-prefixes <prefixes>`:  
+    Removes one or more comma-separated prefixes from the beginning of entry names. For example, `--remove-prefixes "www.,auth."` would turn `www.auth.site.com` into `site.com`.
+
+-   `--remove-suffixes <suffixes>`:  
+    Removes one or more comma-separated suffixes from the end of entry names. For example, `--remove-suffixes ".com,.org"` would turn `site.com` into `site`.
+
+**Example with all cleaning options:**
+
+```bash
+uv run apple-to-bitwarden examples/apple_example.csv bitwarden_import.json \
+  --folder "Apple Imports" \
+  --clean-parentheses \
+  --remove-prefixes "www.,auth." \
+  --remove-suffixes ".com"
+```
 
 ## Importing into Bitwarden
 
