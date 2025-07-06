@@ -1,6 +1,6 @@
 Title,URL,Username,Password,Notes,OTPAuth
 idmsa.test.com (mail@test.de),https://idmsa.test.com/,mail@test.de,1234,Notiz,
 test.com (mail@test.de),https://test.com/,mail@test.de,1234,Notiz,
-auth0.testwebsitecom,https://auth0.testwebsitecom/,contact@test.de,9876,,
-auth0.testwebsitecom,https://auth.testwebsitecom/,contact@test.de,9876,,
-auth0.testwebsitecom,https://testwebsitecom/,maile@test.de,3456,,
+auth0.testwebsite.com,https://auth0.testwebsite.com/,contact@test.de,9876,,
+auth0.testwebsite.com,https://auth.testwebsite.com/,contact@test.de,9876,,
+auth0.testwebsite.com,https://testwebsite.com/,maile@test.de,3456,,

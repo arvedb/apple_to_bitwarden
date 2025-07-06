@@ -1,0 +1,83 @@
+{
+  "encrypted": false,
+  "folders": [],
+  "items": [
+    {
+      "id": "1335db75-17b7-4837-bfec-56a86293e554",
+      "organizationId": null,
+      "folderId": null,
+      "type": 1,
+      "reprompt": 0,
+      "name": "idmsa.test.com (mail@test.de)",
+      "notes": "Notiz",
+      "favorite": false,
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://idmsa.test.com/"
+          },
+          {
+            "match": null,
+            "uri": "https://test.com/"
+          }
+        ],
+        "username": "mail@test.de",
+        "password": "1234",
+        "totp": null
+      },
+      "collectionIds": [],
+      "fields": []
+    },
+    {
+      "id": "7e83b548-f2c0-4b68-ac21-37cfc7f926dd",
+      "organizationId": null,
+      "folderId": null,
+      "type": 1,
+      "reprompt": 0,
+      "name": "auth0.testwebsite.com",
+      "notes": "",
+      "favorite": false,
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://auth.testwebsite.com/"
+          },
+          {
+            "match": null,
+            "uri": "https://auth0.testwebsite.com/"
+          }
+        ],
+        "username": "contact@test.de",
+        "password": "9876",
+        "totp": null
+      },
+      "collectionIds": [],
+      "fields": []
+    },
+    {
+      "id": "9329a419-2bd6-4142-922e-cad001ea855a",
+      "organizationId": null,
+      "folderId": null,
+      "type": 1,
+      "reprompt": 0,
+      "name": "auth0.testwebsite.com",
+      "notes": "",
+      "favorite": false,
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://testwebsite.com/"
+          }
+        ],
+        "username": "maile@test.de",
+        "password": "3456",
+        "totp": null
+      },
+      "collectionIds": [],
+      "fields": []
+    }
+  ]
+}
